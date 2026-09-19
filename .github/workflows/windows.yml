@@ -1,0 +1,43 @@
+- name: Run RapiseLauncher on Windows
+  # You may pin to the exact commit or the version.
+  # uses: Inflectra/rapiselauncher-win-action@5573f637be026d339e2c49d341dcf4c08e3137a9
+  uses: Inflectra/rapiselauncher-win-action@v2.0.3
+  with:
+    # Path to existing RepositoryConnection.xml config file. When provided, spira_url/spira_username/spira_api_key/spira_automation_host are not needed.
+    spira_config: # optional, default is 
+    # Spira server URL. Short form: https://server/ (requires spira_project_id and spira_test_set_id). Full form: https://server/9/TestSet/925.aspx (project_id and test_set_id extracted automatically).
+    spira_url: # default is https://myserver.spiraservice.net/
+    # Spira username. Not needed if spira_config is set.
+    spira_username: # default is myuser
+    # Spira API key (RSS Token). Not needed if spira_config is set.
+    spira_api_key: # default is {00000000-0000-0000-0000-000000000000}
+    # Spira Product/Project ID. Optional.
+    spira_project_id: # optional, default is 
+    # Spira Test Set ID. May be an array, i.e. "1,3,15" to execute several test sets. Not needed if spira_url contains the full test set path.
+    spira_test_set_id: # default is 
+    # Automation Host Token defined for a given project
+    spira_automation_host: # default is GHA
+    # Whether Rapise needs to be installed
+    install_rapise: # optional, default is true
+    # Rapise version to install
+    rapise_version: # optional, default is 9.0.35.37
+    # Set screen resolution for test execution
+    set_screen_size: # optional, default is false
+    # Screen width (1024..7680)
+    screen_width: # optional, default is 1920
+    # Screen height (768..4320)
+    screen_height: # optional, default is 1080
+    # Record video of execution and upload to Spira Test Run
+    record_video: # optional, default is false
+    # Video recording options
+    record_video_options: # optional, default is -noaudio -bitRate 512 -frameRate 2
+    # Capture screenshots before and after test execution
+    capture_screenshots: # optional, default is true
+    # Upload artifacts (screenshots, logs, trp/tap files) after execution
+    upload_artifacts: # optional, default is true
+    # Timeout in minutes for RapiseLauncher execution. 0 means no timeout.
+    timeout_minutes: # optional, default is 0
+    # Path to Git project (for Spira tests stored in Git)
+    git_root: # optional, default is 
+    # Path to file for JUnit XML results output
+    report: # optional, default is rapise-test-results.xml
